@@ -1,0 +1,23 @@
+h1 {
+    color: rebeccapurple;
+    background-color: aquamarine;
+    border: 2px solid blanchedalmond;
+    width: 800px;
+    height: 90px;
+}
+
+h2 {
+    color: #13CF48;
+    background-color: #CF13C2;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 60px;
+    margin-top: 50px;
+    margin-bottom: 250px;
+    border-bottom: 2px dotted aquamarine;
+}
+
+p {
+    color: azure;
+    background-color: firebrick;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

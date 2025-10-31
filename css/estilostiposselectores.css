@@ -1,0 +1,57 @@
+/*1. Selector por clase */ 
+.titulos {
+    color: aquamarine;
+    font-size: 30px;
+    background: yellowgreen;
+}
+
+/*2.Selector por ID*/
+#id_titulo {
+    color: burlywood;
+    background: turquoise;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*3.Selecto de Seudoclase*/
+i:hover {
+    color: blueviolet;
+    font-size: 50px;
+}
+
+input:focus{
+    border-color: aquamarine;
+    background: gold;
+}
+
+/*Selector por atributo*/
+[id] {
+    color: blue;
+    font-size: 25px;
+}
+
+img[alt*="uce"] {
+    width: 100px;
+    height: 150px;
+    color: aqua;
+    border-color: blueviolet;
+}
+
+/*img[alt="no1"] {
+    width: 100px;
+    height: 150px;
+    color: aqua;
+    border-color: blueviolet;
+}
+
+img[alt="no2"] {
+    width: 300px;
+    height: 400px;
+    color: aqua;
+    border-color: blueviolet;
+}*/
+
+/*Selector universal*/
+* {
+    /*declaraciones*/
+}
+

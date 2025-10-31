@@ -1,3 +1,4 @@
+/*1. por tipo de elemento HTML*/
 h1 {
     color: rebeccapurple;
     background-color: aquamarine;
@@ -5,6 +6,7 @@ h1 {
     width: 800px;
     height: 90px;
 }
+
 
 h2 {
     color: #13CF48;
@@ -20,4 +22,8 @@ p {
     color: azure;
     background-color: firebrick;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body {
+    background: #13CF48;
 }

@@ -4,46 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora</title>
+    <!-- Archivo JavaScript externo -->
+     <link rel="stylesheet" href="../css/estilos.css">
     <script src="../js/jsexterno.js"></script>
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <h1> CALCULADORA </h1>
+    </header>
     <nav></nav>
     <section>
-        <!--Aqui se agregue el elemento h1-->
         <div id="id_div"></div>
 
-        <label id="id_label_1" for="id_n1">Numero 1</label>
+        <!-- Entrada de números -->
+        <label id="id_label_1" for="numero1">Número 1:</label>
         <input id="id_n1" type="number">
-        <label id="id_label_2" for="id_n2">Numero 2</label>
+
+        <label id="id_label_2" for="numero2">Número 2:</label>
         <input id="id_n2" type="number">
-        <button onclick="cambiarColor('id_label_1','blue')">Cambiar1</button>
-        <button onclick="cambiarColor('id_label_2','red')">Cambiar2</button>
-        <button onclick="cambiarTamanio('id_label_1','50px')">Cambiar1</button>
-        <button onclick="cambiarTamanio('id_label_2','25px')">Cambiar2</button>
-        <button onclick="agregarElemento1()">Agregar elemento</button>
-        <button onclick="agregarElemento('id_div','<h1>Calculadora</h1>')">Agregar elemento2</button>
-        <button onclick="agregarElemento('id_div',construirH1())">Agregar3</button>
 
-        <!--Cambiar el color para calculadora despues de crearlo-->
-        <button onclick="cambiarColor('id_calculadora','blue')">CambiarCalculadora</button>
+ 
+        <br><br>
+        <!--Botones de manipulacion visual-->
+        <button onclick="cambiarColor('id_label_1','blue')">Color Azul</button>
+        <button onclick="cambiarColor('id_label_2','red')">Color Rojo </button>
+        <button onclick="cambiarTamanio('id_label_1','30px')">Tamaño a 30</button>
+        <button onclick="cambiarTamanio('id_label_2','40px')">Tamaño a 40</button>
 
+        <!--Botones de creacoin de elementos-->
+        <button onclick="agregarElemento1()">Agregar Elemento 1</button>
+        <button onclick="agregarElemento('id_div','<h1>Calculadora</h1>')">Agregar Elemento 2</button>
+        <button onclick="agregarElemento('id_div',construirH1())">Agregar Elemento 3</button>
+        <button onclick="cambiarColor('id_calculadora','green')">Cambiar Color Calculadora</button>
+
+        <!--Control de elemento-->
         <button onclick="eliminarElemento('id_label_1')">Eliminar</button>
         <button onclick="ocultarElemento('id_label_2')">Ocultar</button>
         <button onclick="mostrarElemento('id_label_2')">Mostrar</button>
 
         <hr>
-        <hr>   
-        <button onclick="evaluarOperacion('+')">+</button>
-        <button>-</button>
-        <button>*</button>
-        <button>/</button>
-        <button>=</button>
-        <label id="id_resultado" for=""></label>
+
+        <!--Seccion de CALCULADORA-->
+        <h3>Calculadora Básica</h3>
+        <button onclick="evaluarOperacion('+')">+ Suma</button>
+        <button onclick="evaluarOperacion('-')">- Resta</button>
+        <button onclick="evaluarOperacion('*')">* Multiplicar</button>
+        <button onclick="evaluarOperacion('/')">/ Dividir</button>
+        <br>><br>
+        <label>Resultado: </label>
+        <span id="id_resultado">0</span>
+
     </section>
-    <footer></footer>
+    <aside></aside>
+    <footer>
+        <hr>
+        <p>Desarrollado por Jhonny - Práctica DOM + JavaScript</p>
+    </footer>
+
 </body>
 
 </html>

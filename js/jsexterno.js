@@ -81,3 +81,111 @@ function evaluarOperacion(tipo) {
     }
 
 }
+
+/* =======================
+   FUNDAMENTOS JS
+======================= */
+
+    function fundamentosJS(){
+        /*Tipos de variables*/
+        // antigua y obsoleta
+        var nombre = "Lema y Ninabanda";
+
+        /* variables cambiantes: aplica el tipado dinamico-nose 
+        necesita declara el tipo de dato, aun asi no es recomendable
+        usar diferente tipos de variables en una sola*/
+        let apellido = "Dylan y Eduardo";
+        let apellido2 = "Casa";
+        apellido2 = 10;
+        let arreglo =[1,2,3,4,5,6];
+        let semanaDia = ['Lunes', 'Martes', 'Miercoles'] // arreglos
+        //Constantes
+        const IVA = 12.8;
+        //permite imprimir la consola en el navegador
+        console.log('fundamentosJS'); 
+        console.log(nombre); 
+        console.log(IVA); 
+        console.log(semanaDia); 
+        //Arreglos es comun definirlos como const lo mas correcto
+        const arreglosDiasSemanas = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes']
+        arreglosDiasSemanas.push('Sabado');//agrear al arreglo
+        console.log(arreglosDiasSemanas);
+        arreglosDiasSemanas.unshift('Domingo');// agregar al incio
+        console.log(arreglosDiasSemanas);
+        console.log(arreglosDiasSemanas[0]);
+        console.log('Manejo de nulos, undefined y vacios');
+        arreglosDiasSemanas.push(null);
+        arreglosDiasSemanas.push('');
+        console.log(arreglosDiasSemanas[7]);
+        console.log(arreglosDiasSemanas[8]);
+        console.log(arreglosDiasSemanas[9]);
+        // concatenacion - crea un nuevo arreglo para concatenar
+        const numerosPares = [2,4,6,8];
+        const numerosImpares = [3,5,7,9];
+        const numerosTotales = numerosImpares.concat(numerosPares);
+        console.log(numerosTotales);
+
+        /*Sentencias de control*/
+        // if
+        let edad = 19;
+        if(edad >=18){
+            console.log('Es mayor de edad');
+        } else {
+            console.log('Es menor de edad');
+        }
+
+        // switch
+        let dia = 'lunes'
+        switch(dia){
+            case 'lunes': 
+                console.log(dia);
+                break;
+            case 'martes':
+                console.log(dia);
+                break;
+            default:
+                console.log('Ese dia no existe');
+        }
+
+        //for
+        for (let i = 0; i <= 5; i++) {
+            console.log(i);    
+        }
+        
+        const frutas = ['manzana', 'sandia','papaya','pera','naranja'];
+        
+        for(let op of frutas){
+            console.log(op);
+        }
+
+        /*Manejo de objetos
+        - se declara en forma de Json */
+
+        const profesor = {
+            nombre: 'Eduardo',
+            apellido: 'Lema',
+            edad: '27',
+            ecuatorano: true,
+            genero: 'M',
+            ciudad: 'Quito'
+        }
+        console.log(profesor);
+        console.log(profesor.nombre);
+        profesor.apellido = 'Casa';
+        console.log(profesor);
+
+        if(profesor.ciudad === 'Quito'){
+            console.log('Es quiteño');
+        }
+
+        if (profesor.edad !== 36){
+            console.log('Diferente de 36');
+        } else {
+            console.log('Igual a 36');
+        }
+        for(let clave in profesor){
+            console.log(clave);
+            console.log(profesor[clave]);
+        }
+    }
+    

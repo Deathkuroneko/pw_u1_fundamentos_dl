@@ -69,10 +69,10 @@ function evaluarOperacion(tipo) {
 ======================= */
     function sumar(a, b) {
         return a + b;
-    }   
+    }
     function restar(a, b) {
         return a - b;
-    }           
+    }
     function multiplicar(a, b) {
         return a * b;
     }
@@ -86,106 +86,230 @@ function evaluarOperacion(tipo) {
    FUNDAMENTOS JS
 ======================= */
 
-    function fundamentosJS(){
-        /*Tipos de variables*/
-        // antigua y obsoleta
-        var nombre = "Lema y Ninabanda";
+function fundamentosJS() {
+    /*Tipos de variables*/
+    // antigua y obsoleta
+    var nombre = "Lema y Ninabanda";
 
-        /* variables cambiantes: aplica el tipado dinamico-nose 
-        necesita declara el tipo de dato, aun asi no es recomendable
-        usar diferente tipos de variables en una sola*/
-        let apellido = "Dylan y Eduardo";
-        let apellido2 = "Casa";
-        apellido2 = 10;
-        let arreglo =[1,2,3,4,5,6];
-        let semanaDia = ['Lunes', 'Martes', 'Miercoles'] // arreglos
-        //Constantes
-        const IVA = 12.8;
-        //permite imprimir la consola en el navegador
-        console.log('fundamentosJS'); 
-        console.log(nombre); 
-        console.log(IVA); 
-        console.log(semanaDia); 
-        //Arreglos es comun definirlos como const lo mas correcto
-        const arreglosDiasSemanas = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes']
-        arreglosDiasSemanas.push('Sabado');//agrear al arreglo
-        console.log(arreglosDiasSemanas);
-        arreglosDiasSemanas.unshift('Domingo');// agregar al incio
-        console.log(arreglosDiasSemanas);
-        console.log(arreglosDiasSemanas[0]);
-        console.log('Manejo de nulos, undefined y vacios');
-        arreglosDiasSemanas.push(null);
-        arreglosDiasSemanas.push('');
-        console.log(arreglosDiasSemanas[7]);
-        console.log(arreglosDiasSemanas[8]);
-        console.log(arreglosDiasSemanas[9]);
-        // concatenacion - crea un nuevo arreglo para concatenar
-        const numerosPares = [2,4,6,8];
-        const numerosImpares = [3,5,7,9];
-        const numerosTotales = numerosImpares.concat(numerosPares);
-        console.log(numerosTotales);
+    /* variables cambiantes: aplica el tipado dinamico-nose 
+    necesita declara el tipo de dato, aun asi no es recomendable
+    usar diferente tipos de variables en una sola*/
+    let apellido = "Dylan y Eduardo";
+    let apellido2 = "Casa";
+    apellido2 = 10;
+    let arreglo = [1, 2, 3, 4, 5, 6];
+    let semanaDia = ['Lunes', 'Martes', 'Miercoles'] // arreglos
+    //Constantes
+    const IVA = 12.8;
+    //permite imprimir la consola en el navegador
+    console.log('fundamentosJS');
+    console.log(nombre);
+    console.log(IVA);
+    console.log(semanaDia);
+    //Arreglos es comun definirlos como const lo mas correcto
+    const arreglosDiasSemanas = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes']
+    arreglosDiasSemanas.push('Sabado');//agrear al arreglo
+    console.log(arreglosDiasSemanas);
+    arreglosDiasSemanas.unshift('Domingo');// agregar al incio
+    console.log(arreglosDiasSemanas);
+    console.log(arreglosDiasSemanas[0]);
+    console.log('Manejo de nulos, undefined y vacios');
+    arreglosDiasSemanas.push(null);
+    arreglosDiasSemanas.push('');
+    console.log(arreglosDiasSemanas[7]);
+    console.log(arreglosDiasSemanas[8]);
+    console.log(arreglosDiasSemanas[9]);
+    // concatenacion - crea un nuevo arreglo para concatenar
+    const numerosPares = [2, 4, 6, 8];
+    const numerosImpares = [3, 5, 7, 9];
+    const numerosTotales = numerosImpares.concat(numerosPares);
+    console.log(numerosTotales);
 
-        /*Sentencias de control*/
-        // if
-        let edad = 19;
-        if(edad >=18){
-            console.log('Es mayor de edad');
-        } else {
-            console.log('Es menor de edad');
-        }
+    /*Sentencias de control*/
+    // if
+    let edad = 19;
+    if (edad >= 18) {
+        console.log('Es mayor de edad');
+    } else {
+        console.log('Es menor de edad');
+    }
 
-        // switch
-        let dia = 'lunes'
-        switch(dia){
-            case 'lunes': 
-                console.log(dia);
-                break;
-            case 'martes':
-                console.log(dia);
-                break;
-            default:
-                console.log('Ese dia no existe');
-        }
+    // switch
+    let dia = 'lunes'
+    switch (dia) {
+        case 'lunes':
+            console.log(dia);
+            break;
+        case 'martes':
+            console.log(dia);
+            break;
+        default:
+            console.log('Ese dia no existe');
+    }
 
-        //for
-        for (let i = 0; i <= 5; i++) {
-            console.log(i);    
-        }
-        
-        const frutas = ['manzana', 'sandia','papaya','pera','naranja'];
-        
-        for(let op of frutas){
-            console.log(op);
-        }
+    //for
+    for (let i = 0; i <= 5; i++) {
+        console.log(i);
+    }
 
-        /*Manejo de objetos
-        - se declara en forma de Json */
+    const frutas = ['manzana', 'sandia', 'papaya', 'pera', 'naranja'];
 
-        const profesor = {
-            nombre: 'Eduardo',
-            apellido: 'Lema',
-            edad: '27',
-            ecuatorano: true,
-            genero: 'M',
-            ciudad: 'Quito'
-        }
-        console.log(profesor);
-        console.log(profesor.nombre);
-        profesor.apellido = 'Casa';
-        console.log(profesor);
+    for (let op of frutas) {
+        console.log(op);
+    }
 
-        if(profesor.ciudad === 'Quito'){
-            console.log('Es quiteño');
-        }
+    /*Manejo de OBJETOS
+    - se declara en forma de Json */
 
-        if (profesor.edad !== 36){
-            console.log('Diferente de 36');
-        } else {
-            console.log('Igual a 36');
-        }
-        for(let clave in profesor){
-            console.log(clave);
-            console.log(profesor[clave]);
+    const profesor = {
+        nombre: 'Eduardo',
+        apellido: 'Lema',
+        edad: '27',
+        ecuatorano: true,
+        genero: 'M',
+        ciudad: 'Quito'
+    }
+    console.log(profesor);
+    console.log(profesor.nombre);
+    profesor.apellido = 'Casa';
+    console.log(profesor);
+
+    if (profesor.ciudad === 'Quito') {
+        console.log('Es quiteño');
+    }
+
+    if (profesor.edad !== 36) {
+        console.log('Diferente de 36');
+    } else {
+        console.log('Igual a 36');
+    }
+    for (let clave in profesor) {
+        console.log(clave);
+        console.log(profesor[clave]);
+    }
+    const e1 = {
+        nombre: 'Eduardo',
+        apellido: 'Lema',
+        edad: '27',
+        ecuatorano: true,
+        genero: 'M',
+        ciudad: 'Quito'
+    }
+
+    const e2 = {
+        nombre: 'Eduardo',
+        apellido: 'Lema',
+        edad: '27',
+        ecuatorano: true,
+        genero: 'M',
+        ciudad: 'Quito'
+    }
+
+    const arregloStudent = [e1, e2, {
+        nombre: 'Eduardo',
+        apellido: 'Lema',
+        edad: '27',
+        ecuatorano: true,
+        genero: 'M',
+        ciudad: 'Quito'
+    }]
+    console.log(arregloStudent[2]);
+
+    //Declaracion de Objetos dentro de otros objetos
+
+
+    /*la desestructuracion es una forma sencilla y practica de extraer
+    valores de un objeto o arreglo y asignarlo a variables individuales*/
+    /* Desestructuracion*/
+    //arreglos - se guia por la posion de la variables con la de los elementos
+    const ar1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const [a, b, c, d, e] = ar1;
+    console.log(a);
+    console.log(e);
+
+    const [first, , , , , , , , last] = ar1;
+    console.log(first);
+    console.log(last);
+
+    const [first1, , , , , , , , last2] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    imprime(ar1);
+
+    const e3 = {
+        nombre1: 'Eduardo',
+        apellido: 'Lema',
+        edad: '27',
+        ecuatorano: true,
+        genero: 'M',
+        ciudad1: 'Quito'
+    }
+
+    //Objetos - definido por el nombre de atributo 
+    const { nombre1, ciudad1 } = e3;
+    console.log(nombre1);
+    console.log(ciudad1);
+
+    const { name1, city1 } = {
+        name1: 'Eduardo',
+        apellido: 'Lema',
+        edad: '27',
+        ecuatorano: true,
+        genero: 'M',
+        city1: 'Quito'
+    }
+    console.log(name1);
+    console.log(city1);
+
+
+    // para renombrar los atributos se utiliza los ":" y el nombre que se requiera
+    // se puede usar variables repetidas siempre q se renombre como "name1"
+    const { name1: n, genero: g } = {
+        name1: 'Eduardo',
+        apellido: 'Lema',
+        edad: '27',
+        ecuatorano: true,
+        genero: 'M',
+        city2: 'Quito'
+    }
+    console.log(n);
+    console.log(g);
+
+    const e4 = {
+        nombre1: 'Eduardo',
+        apellido: 'Lema',
+        edad: '27',
+        ecuatorano: true,
+        genero: 'M',
+        ciudad1: 'Quito',
+        direccion: {
+            calle: 'maldonado',
+            barrio: 'Lucha',
+            numeracion: 'Lote 17'
         }
     }
-    
+    console.log(e4);
+    console.log(e4.direccion);
+    console.log(e4.direccion.numeracion);
+
+    // desestructuracion en de uno objeto en partes
+    const { edad: xy, direccion } = e4
+    console.log(xy);
+    console.log(direccion);
+
+    const {calle} = direccion;
+    console.log(calle);
+
+    // desestructurar en una linea de direccion un objeto dentro de otro
+    const {direccion: {calle: c1,barrio}} = e4
+    console.log(c1);
+    console.log(barrio);
+
+}
+
+//vale desestructurar directo siempre que se sepa que es un arreglo el argumento que se recibe
+function imprime([a, b, c]) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+

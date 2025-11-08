@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/calculadoraFinal.css">
+    <script src="../js/calculadoraFinal.js"></script>
 </head>
+
 <body>
-    <header>
+    <div class="container">
+        <header>Calculadora</header>
+        <nav>Barra de Navegación</nav>
+        <section>
+            <div id="calculadora">
+                <!-- <label id="display" for="">0+1=1</label> -->
+                 <div id="display">1+2=7</div>
+                <button onclick="mostraDisplay('C')">C</button>
+                <button onclick="mostraDisplay('&#8592')">&#8592</button>
+                <button onclick="mostraDisplay('%')">%</button>
+                <button onclick="mostraDisplay('/')">/</button>
+                <button onclick="mostraDisplay(7)">7</button>
+                <button onclick="mostraDisplay(8)">8</button>
+                <button onclick="mostraDisplay(9)">9</button>
+                <button onclick="mostraDisplay('*')">*</button>
+                <button onclick="mostraDisplay(4)">4</button>
+                <button onclick="mostraDisplay(5)">5</button>
+                <button onclick="mostraDisplay(6)">6</button>
+                <button onclick="mostraDisplay('-')">-</button>
+                <button id="1" onclick="mostraDisplay(1)">1</button>
+                <button onclick="mostraDisplay(2)">2</button>
+                <button onclick="mostraDisplay(3)">3</button>
+                <button onclick="mostraDisplay('+')">+</button>
+                <button onclick="mostraDisplay(0)">0</button>
+                <button onclick="mostraDisplay('.')">.</button>
+                <button class="column-2" onclick="mostraDisplay('=')">=</button>
 
-    </header>
-    <nav></nav>
-    <section>
-        <div id = "calculadora">
-            <label for="">0+1=1</label>
-            <button>C</button>
-            <button>&#8592</button>   
-            <button>%</button>  
-            <button>/</button>
-            <button>7</button>  
-            <button>8</button>
-            <button>9</button>  
-            <button>*</button>
-            <button>4</button>  
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            <button>1</button>    
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-            <button>0</button>  
-            <button>.</button>
-            <button>=</button>    
-
-        </div>
-    </section>
-    <footer></footer>
+            </div>
+        </section>
+        <footer>Pie</footer>
+    </div>
 </body>
+
 </html>
+
+<!--Siempre que tenha un grupo de elementos que quiera representar, siempre se debe poner un
+ elemento que haga alusion a lo que se quiere hacer, un contenedor donde va estar los elementos
+ este  puede abarcar el contenido de toda la pagina web-->

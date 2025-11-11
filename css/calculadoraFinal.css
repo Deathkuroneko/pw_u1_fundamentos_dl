@@ -49,3 +49,33 @@ button {
 button:active{
     background: yellowgreen;
 }
+
+#id_nota {
+    color: rgb(14, 146, 146);
+    margin-top: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    border: 1px solid #0dc1ee;
+    font-style: italic;
+}
+
+#id_footer {
+    margin-top: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    color: rgb(13, 179, 35);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.barra_superior {
+    background-color: #f7ad0c;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #585132;
+    border-bottom: 2px solid #585132;
+}

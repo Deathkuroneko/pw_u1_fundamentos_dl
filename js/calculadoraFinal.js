@@ -2,20 +2,22 @@ let entradaCalculos = [];
 let display = document.getElementById('display');
 
 function mostraDisplay(valor) {
+    
+    // Limpiar todo
     if (valor === 'C') {
-        // Limpiar todo
         entradaCalculos = [];
         display.innerText = '';
         return;
     }
 
+    // Borrar último carácter
     if (valor === '←') {
-        // Borrar último elemento
         entradaCalculos.pop();
         display.innerText = entradaCalculos.join('');
         return;
     }
 
+    // Calcular resultado
     if (valor === '=') {
         let resultado = calcular(entradaCalculos);
         display.innerText = resultado;
@@ -23,12 +25,10 @@ function mostraDisplay(valor) {
         return;
     }
 
-    // Añadir número o símbolo
+    // Agregar valor al array y mostrar en display
     entradaCalculos.push(valor.toString());
     display.innerText = entradaCalculos.join('');
 
-    /*let elemento = document.getElementById('display');
-    elemento.innerText = elemento.innerText + valor;*/
 }
 
 function calcular(entradaCalculos) {
@@ -40,14 +40,17 @@ function calcular(entradaCalculos) {
     // Combinacion de numeros entreros o decimales
     cadenaFinal = unirNumeros(entradaCalculos);
 
-    // Errores de sintaxis
+    // Procesar porcentajes y validar errores de %
+    cadenaFinal = procesarPorcentajes(cadenaFinal);
+    if (cadenaFinal.length === 1 && cadenaFinal[0] === "Error") {
+        return "Error";
+    }
+
+    // Errores de sintaxis generales
     let error = errorSintaxis(cadenaFinal);
     if (error) {
         return error;
     }
-
-    // Porcentajes
-    cadenaFinal = aplicarPorcentajes(cadenaFinal);
 
     // Multiplicaciones y divisiones
     cadenaFinal = multiDivi(cadenaFinal);
@@ -62,53 +65,75 @@ function unirNumeros(arElementos) {
 
     let cadenaFinal = [];
     let numero = "";
+
     for (let i = 0; i < arElementos.length; i++) {
         const char = arElementos[i];
-
+        //validar si es numero/punto decimal y acumular 
         if (!isNaN(char) || char === ".") {
-            numero += char; // acumula dígitos o punto decimal
+            numero += char; 
         } else {
             if (numero) {
                 cadenaFinal.push(parseFloat(numero));
                 numero = "";
             }
-            cadenaFinal.push(char); // mete el operador
+            cadenaFinal.push(char); 
         }
     }
 
+    // Agregar el último número si existe
     if (numero) cadenaFinal.push(parseFloat(numero));
 
     return cadenaFinal;
 }
 
-/* function porcentajes(cadenaFinal) {
-    for (let i = 0; i < cadenaFinal.length; i++) {
-        if (cadenaFinal[i] === '%') {
-            
-            let base = cadenaFinal[i - 1];
-            let porcentaje = base / 100;
+function procesarPorcentajes(cadenaFinal) {
+    let resultado = [];
 
-            
-            if (i >= 2 && (cadenaFinal[i - 2] === '+' || cadenaFinal[i - 2] === '-')) {
-                let referencia = cadenaFinal[i - 3];
-                porcentaje = referencia * (base / 100);
+    for (let i = 0; i < cadenaFinal.length; i++) {
+        let actual = cadenaFinal[i];
+        let siguiente = cadenaFinal[i + 1];
+
+        // Validar error de operadores consecutivos (excepto '%')
+        if (isNaN(actual) && isNaN(siguiente) && actual !== '%' && siguiente !== '%') {
+            return ["Error"];
+        }
+
+        // Si el carácter actual es '%'
+        if (actual === '%') {
+            // Error si está al inicio
+            if (i === 0 || isNaN(cadenaFinal[i - 1])) {
+                return ["Error"];
             }
 
-            cadenaFinal.splice(i - 1, 2, porcentaje);
-            i = 0; 
+            // Convierte el número anterior en su valor decimal
+            let base = parseFloat(resultado.pop());
+            resultado.push(base / 100);
+        }
+        else {
+            resultado.push(actual);
         }
     }
-    return cadenaFinal;
-} */
+
+    // Error si el último carácter es un operador excepto '%'
+    let ultimo = cadenaFinal[cadenaFinal.length - 1];
+    if (isNaN(ultimo) && ultimo !== '%') {
+        return ["Error"];
+    }
+
+    return resultado;
+}
+
 
 
 function errorSintaxis(cadenaFinal) {
 
+    // Verificar operadores consecutivos
     for (let i = 0; i < cadenaFinal.length; i++) {
         if (isNaN(cadenaFinal[i]) && isNaN(cadenaFinal[i + 1])) {
             return "Error";
         }
     }
+    // Verificar que el primer y último elemento no sean operadores
     if (isNaN(cadenaFinal[cadenaFinal.length - 1])) {
         return "Error";
     }

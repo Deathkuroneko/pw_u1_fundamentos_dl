@@ -17,7 +17,7 @@ p:before{
     content: attr(type);
     display: block;
     font-size: 20px;
-    color: rgb(26, 59, 90);
+    color: rgb(24, 92, 156);
     background: none;
     color: rgb(64, 64, 124);
     margin-top: 40px;

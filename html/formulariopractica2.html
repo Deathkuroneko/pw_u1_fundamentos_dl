@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../css/practica2.css">
+    <script src="../js/practica2.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Universidad Central del Ecuador</h1>
+        <h3>Programacion web</h3>
+    </header>
+    <nav></nav>
+    <section>
+        <div id="container1">
+            <div>
+                <img id="img_id"
+                    src="https://c4.wallpaperflare.com/wallpaper/85/445/256/amagi-brilliant-park-anime-girls-sento-isuzu-sexy-anime-wallpaper-preview.jpg"
+                    tabindex="0" alt="">
+            </div>
+            <table id="tabla1">
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Temporada</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>La casa de papel</td>
+                    <td>2017</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Stranger Things</td>
+                    <td>2016</td>
+                </tr>
+            </table>
+
+            <table id="tabla2">
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Temporada</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>La casa de papel</td>
+                    <td>2017</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Stranger Things</td>
+                    <td>2016</td>
+                </tr>
+            </table>
+        </div>
+        <div id="container2">
+            <div id="boton_img" class="centrarboton" onclick="ocultarImagen()"><button>Ocultar Imagen</button></div>
+            <div class="centrarboton"><button id="boton_tb1" onclick="ocultarTabla1()">Ocultar tabla1</button></div>
+            <div class="centrarboton"><button onclick="ocultarTabla2()">Ocultar tabla2</button></div>
+        </div>
+
+        <div id="formulario">
+            <form action="#">
+                <h3>Formulario Personal</h3>
+                <div id="id_vacio" class="vacioMsg"></div>
+                <p type="Nombre:"> <input id="id_name" type="text"> <span id="asterisco" class="vacioMsg"></span></p>
+                <div id="id_vacio1" class="vacioMsg"></div>
+                <p type="Apellido:"><input id="id_ape" type="text" maxlength="6"><span id="asterisco1" class="vacioMsg"></span></p>
+                <div id="id_vacio2" class="vacioMsg"></div>
+                <p type="Edad:"><input id="id_edad" type="number"><span id="asterisco2" class="vacioMsg"></span></p>
+                <div id="id_vacio3" class="vacioMsg"></div>
+                <label id="Fecha" for="id_date"></label> <input type="date" id="id_date"><span id="asterisco3" class="vacioMsg"></span>
+            </form>
+        </div>
+
+        <div class="centrarboton"><button id="save_form" onclick="inputVacio()">Guardar</button></div>
+
+    </section>
+    <footer></footer>
+</body>
+
+</html>
